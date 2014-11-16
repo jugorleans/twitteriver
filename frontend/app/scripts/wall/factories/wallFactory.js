@@ -2,7 +2,7 @@
 
 angular.module('wall').factory('wallFactory',function($rootScope){
     
-    var socket = io.connect('http://jugorleans-twitteriver.rhcloud.com:8000');
+    var socket = io.connect('http://localhost:8000');
     
     //var socket = "";
     
