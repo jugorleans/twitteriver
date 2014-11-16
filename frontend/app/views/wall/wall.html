@@ -1,0 +1,18 @@
+<div class="text-center banner">
+    #jug<a href="https://www.twitter.com/jugorleans"><img src="../images/twitter.png" class="image" alt="Twitter du JUG'Orléans"/></a>rleans
+</div>
+<div class="logo-beta">bêta</div>
+<br>
+<div class="container" infinite-scroll='infiniteScroll.nextPage()' infinite-scroll-disabled='infiniteScroll.busy'>
+    <div class="well well-sm" ng-repeat="tweet in tweets">
+        <div class="media">
+            <a class="pull-left" href="https://www.twitter.com/{{tweet.login}}">
+                <img src="{{tweet.img}}" alt="{{tweet.name}}">
+            </a>
+            <div class="media-body">
+                <h4 class="media-heading">{{tweet.login}}</h4>
+                <div tweet text={{tweet.text}}></div>
+            </div>
+        </div>
+    </div>
+</div>

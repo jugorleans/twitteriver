@@ -1,0 +1,104 @@
+.footer{
+    background-color: #2E2E2E;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.link{
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.container, .container-wall {
+    max-width: 930px;
+}
+    
+.container-wall{
+    padding-top: 90px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.logo-beta, .logo-beta-wall {
+    text-align: center;
+    text-transform: uppercase;
+    position: absolute;
+    top: 26px;
+    left: -35px;
+    -webkit-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+    width: 150px;
+    background-color: #DF0101;
+    color: #fff;
+    padding: 5px;
+    font-size: 15px;
+    font-weight: 700;
+}
+
+.logo-beta-wall {
+    position :fixed;
+    width: 130px;
+    top: 20px;
+}
+
+@media (min-width : 320px) and (max-width : 480px) {
+    .logo-beta, .logo-beta-wall {
+        width: 110px;
+        top: 13px;
+        font-size: 12px;
+    }
+    
+    .logo{
+        width: 250px
+    }
+    
+    .image{
+        width: 32px;
+        height: 32px;
+    }
+}
+
+.banner, .banner-wall{
+    background-color: #3991c3;
+    font-size: 72px;
+    color: black;
+    margin-top: 0px;
+    margin-bottom: 0px;
+    font-weight: bold;
+    padding-bottom: 20px;
+    padding-top: 20px;
+}
+
+.banner-wall{
+    position: fixed;
+    width: 100%;
+    padding-bottom: 10px;
+    padding-top: 10px;
+    font-size: 48px;
+}
+
+@media (min-width : 320px) and (max-width : 480px) {
+    .banner{
+        font-size: 40px
+    }
+    
+    .banner-wall{
+        font-size: 38px
+    }
+}
+
+.jumbotron{
+    margin-bottom: 0px;
+}
+
+.permalink{
+    font-size: 12px;
+    color: #585858;
+}
+
+.permadiv{
+    color: #585858;
+    background-color: #2E2E2E;
+    font-size: 12px;
+    padding-bottom: 10px;
+}
