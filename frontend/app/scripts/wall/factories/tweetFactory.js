@@ -2,7 +2,7 @@
 
 angular.module('wall').factory('tweetFactory',['$http',function($http){
     
-    var urlBase = 'http://jugorleans-twitteriver.rhcloud.com:8000/';
+    var urlBase = 'http://localhost:8000/';
     
     return {
         search : function(beforeDate,nbTweet){
