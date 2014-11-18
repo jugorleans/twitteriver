@@ -4,6 +4,7 @@
 River des tweets associés à #jugorleans et @jugorleans
 
 L'application tourne sur openshift : http://jugorleans-twitteriver.rhcloud.com
+Il s'agit d'une application AngularJS - Socket.io - Node.js - MongoDB
 
 ## Node - installation
 * Installer node.js avec les modules suivants
