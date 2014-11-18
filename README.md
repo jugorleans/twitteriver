@@ -23,7 +23,6 @@ L'application tourne sur openshift : http://jugorleans-twitteriver.rhcloud.com
   * twit
   
 ## Backend - installation
-TODO :
 * Installer node.js (cf ci-dessus)
 * Créer une application twitter depuis https://apps.twitter.com/ 
 * Configurer depuis cette application la génération de 4 tokens : 
@@ -59,4 +58,7 @@ TODO :
 * Tweeter avec le contenu attendu depuis Twitter
 * Vérifier que le service REST retourne bien le tweet enregistré : [http://localhost:8000/_searchtweet/?beforeDate=2017-11-07T20:43:07.000Z&nbTweets=10](http://localhost:8000/_searchtweet/?beforeDate=2017-11-07T20:43:07.000Z&nbTweets=10)
 
+
+## Frontend - installation
+A venir
 
