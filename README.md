@@ -57,6 +57,6 @@ TODO :
 * Démarrer la base mongo ("mongod" depuis un terminal) 
 * Démarrer node sur [/backend/app.js](https://github.com/jugorleans/twitteriver/blob/master/backend/app.js) 
 * Tweeter avec le contenu attendu depuis Twitter
-* Vérifier que le service REST retourne bien le tweet enregistré : http://localhost:8000/_searchtweet/?beforeDate=2017-11-07T20:43:07.000Z&nbTweets=10
+* Vérifier que le service REST retourne bien le tweet enregistré : [http://localhost:8000/_searchtweet/?beforeDate=2017-11-07T20:43:07.000Z&nbTweets=10](http://localhost:8000/_searchtweet/?beforeDate=2017-11-07T20:43:07.000Z&nbTweets=10)
 
 
