@@ -62,5 +62,13 @@ Il s'agit d'une application [AngularJS](https://angularjs.org/) - [Socket.io](ht
 
 
 ## Frontend - installation
-A venir
+
+* npm install -g bower
+* npm install -g grunt-cli
+* cd [TWITTERIVER_HOME]/frontend
+* npm install 
+* bower install
+* grunt build
+* grunt serve 
+
 
