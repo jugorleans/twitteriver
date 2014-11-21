@@ -59,6 +59,10 @@ describe('directive: tweet', function () {
   
   // Contrôle du traitement des URL (http)
   describe('with URL', function() {
+    it('should works with no match case', function() {
+      // cas simple sans correspondance à remplacer
+      expect(compileDirective('simple tweet')).toBe('simple tweet');
+    });
     it('should works with simple http case', function() {
       // cas simple
       expect(compileDirective('url : http://www.jugorleans.fr/')).toBe('url : <a href="http://www.jugorleans.fr/" target="_blank">http://www.jugorleans.fr/</a>');
@@ -67,9 +71,17 @@ describe('directive: tweet', function () {
       // cas https
       expect(compileDirective('url : https://www.jugorleans.fr/')).toBe('url : <a href="https://www.jugorleans.fr/" target="_blank">https://www.jugorleans.fr/</a>');
     });
-    it('should works with only http', function() {
-      // cas http sans www
-      expect(compileDirective('url : http://jugorleans.fr/')).toBe('url : <a href="http://jugorleans.fr/" target="_blank">http://jugorleans.fr/</a>');
+    it('should works with http followed by tabulation', function() {
+      // cas http suivi d'une tabulation
+      expect(compileDirective('url : http://jugorleans.fr/\twith tabulation')).toBe('url : <a href="http://jugorleans.fr/" target="_blank">http://jugorleans.fr/</a>\twith tabulation');
+    });
+    it('should works with http followed by new line', function() {
+      // cas http suivi d'un saut de ligne
+      expect(compileDirective('url : http://jugorleans.fr/\nnew line')).toBe('url : <a href="http://jugorleans.fr/" target="_blank">http://jugorleans.fr/</a>\nnew line');
+    });
+    it('should works with http that contains #', function() {
+      // cas http contenant le caractère dièse
+      expect(compileDirective('url : http://jugorleans.fr/#app contains sharp')).toBe('url : <a href="http://jugorleans.fr/#app" target="_blank">http://jugorleans.fr/#app</a> contains sharp');
     });
   });
 });
