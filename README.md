@@ -63,6 +63,11 @@ Il s'agit d'une application [AngularJS](https://angularjs.org/) - [Socket.io](ht
 
 ## Frontend - installation
 
+* Modifer le fichier index.html afin de pointer sur la socket local (deployé sur node)
+```html
+  <!-- socket js --> 
+  <script src="http://localhost:8000/socket.io/socket.io.js"></script>
+```
 * npm install -g bower
 * npm install -g grunt-cli
 * cd [TWITTERIVER_HOME]/frontend
