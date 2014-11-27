@@ -11,7 +11,7 @@
             </a>
             <div class="media-body">
                 <h4 class="media-heading">{{tweet.login}}</h4>
-                <div tweet text={{tweet.text}}></div>
+                <div ng-bind-html="tweet.text | linkEnhancer" />
             </div>
         </div>
     </div>
