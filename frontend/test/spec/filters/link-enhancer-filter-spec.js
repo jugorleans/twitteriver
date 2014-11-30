@@ -13,19 +13,23 @@ describe('link enhancer spec', function () {
   describe('with twitter mentions', function() {
     it('should works with simple mention case', function() {
       // cas simple
-      expect(linkEnhancer('mention : @jugorleans')).toBe('mention : <a href="https://www.twitter.com/@jugorleans" target="_blank">@jugorleans</a>');
+      expect(linkEnhancer('mention : @jugorleans')).toBe('mention : <a href="https://www.twitter.com/jugorleans" target="_blank">@jugorleans</a>');
     });
     it('should ignore "." in mention', function() {
       // mention avec un "." en fin de chaine
-      expect(linkEnhancer('mention : @jugorleans.')).toBe('mention : <a href="https://www.twitter.com/@jugorleans" target="_blank">@jugorleans</a>.');
+      expect(linkEnhancer('mention : @jugorleans.')).toBe('mention : <a href="https://www.twitter.com/jugorleans" target="_blank">@jugorleans</a>.');
     });
     it('should ignore ":" in mention', function() {
       // mention en début de phrase suivi de ':'
-      expect(linkEnhancer('@jugorleans: it\'s a mention')).toBe('<a href="https://www.twitter.com/@jugorleans" target="_blank">@jugorleans</a>: it\'s a mention');
+      expect(linkEnhancer('@jugorleans: it\'s a mention')).toBe('<a href="https://www.twitter.com/jugorleans" target="_blank">@jugorleans</a>: it\'s a mention');
     });
     it('should works with several mentions', function() {
       // plusieurs mentions dans le tweet
-      expect(linkEnhancer('Multi mention: @jugorleans and @twitter')).toBe('Multi mention: <a href="https://www.twitter.com/@jugorleans" target="_blank">@jugorleans</a> and <a href="https://www.twitter.com/@twitter" target="_blank">@twitter</a>');
+      expect(linkEnhancer('Multi mention: @jugorleans and @twitter')).toBe('Multi mention: <a href="https://www.twitter.com/jugorleans" target="_blank">@jugorleans</a> and <a href="https://www.twitter.com/twitter" target="_blank">@twitter</a>');
+    });
+    it('should ignore mail format', function() {
+      // ignore les '@' correspondant à un mail
+      expect(linkEnhancer('Ignore nom.prenom@mail mais pas: @jugorleans and @twitter')).toBe('Ignore nom.prenom@mail mais pas: <a href="https://www.twitter.com/jugorleans" target="_blank">@jugorleans</a> and <a href="https://www.twitter.com/twitter" target="_blank">@twitter</a>');
     });
   });
 
@@ -74,6 +78,10 @@ describe('link enhancer spec', function () {
     it('should works with http that contains #', function() {
       // cas http contenant le caractère dièse
       expect(linkEnhancer('url : http://jugorleans.fr/#app contains sharp')).toBe('url : <a href="http://jugorleans.fr/#app" target="_blank">http://jugorleans.fr/#app</a> contains sharp');
+    });
+    it('should ignore URL ending with ...', function() {
+      // ignore les URL se terminant par '...'
+      expect(linkEnhancer('url : http://jugorleans...')).toBe('url : http://jugorleans...');
     });
   });
 });
